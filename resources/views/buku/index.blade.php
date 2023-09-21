@@ -8,8 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100">
-    <div class="container mx-auto mt-10">
-        <h1 class="text-3xl font-semibold text-center mb-6">Daftar Buku</h1>
+    <div class="container mx-auto mt-10 p-4">
+        <h1 class="text-3xl font-semibold text-center mb-6 bg-gray-200 py-2">Daftar Buku</h1>
         <a href="{{ route('buku.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4 inline-block">Tambah Buku</a>
         <table class="w-full border-collapse border border-gray-300 bg-white shadow-md">
             <thead class="bg-gray-200">
@@ -36,14 +36,13 @@
                     <td class="px-4 py-2 border border-gray-300">Rp {{ number_format($buku->harga, 2) }}</td>
                     <td class="px-4 py-2 border border-gray-300">{{ $buku->tgl_terbit }}</td>
                     <td class="px-4 py-2 border border-gray-300">
-    <a href="{{ route('buku.edit', $buku->id) }}" class="text-blue-500 hover:text-blue-700">Edit</a>
-    <form action="{{ route('buku.destroy', $buku->id) }}" method="POST" class="inline">
-        @csrf
-        @method('DELETE')
-        <button onclick="return confirm('Yakin mau dihapus?')" class="text-red-500 hover:text-red-700">Hapus</button>
-    </form>
-</td>
-
+                        <a href="{{ route('buku.edit', $buku->id) }}" class="text-blue-500 hover:text-blue-700">Edit</a>
+                        <form action="{{ route('buku.destroy', $buku->id) }}" method="POST" class="inline">
+                            @csrf
+                            @method('DELETE')
+                            <button onclick="return confirm('Yakin mau dihapus?')" class="text-red-500 hover:text-red-700">Hapus</button>
+                        </form>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>
