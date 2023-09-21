@@ -15,7 +15,6 @@
             <thead class="bg-gray-200">
                 <tr>
                     <th class="px-4 py-2 border border-gray-300">No.</th>
-                    <th class="px-4 py-2 border border-gray-300">ID</th>
                     <th class="px-4 py-2 border border-gray-300">Judul Buku</th>
                     <th class="px-4 py-2 border border-gray-300">Penulis</th>
                     <th class="px-4 py-2 border border-gray-300">Harga</th>
@@ -30,7 +29,6 @@
                 @foreach ($data_buku as $buku)
                 <tr>
                     <td class="px-4 py-2 border border-gray-300">{{ ++$no }}</td>
-                    <td class="px-4 py-2 border border-gray-300">{{ $buku->id }}</td>
                     <td class="px-4 py-2 border border-gray-300">{{ $buku->judul }}</td>
                     <td class="px-4 py-2 border border-gray-300">{{ $buku->penulis }}</td>
                     <td class="px-4 py-2 border border-gray-300">Rp {{ number_format($buku->harga, 2) }}</td>
